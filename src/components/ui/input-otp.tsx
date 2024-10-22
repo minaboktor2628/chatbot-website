@@ -35,7 +35,9 @@ const InputOTPSlot = React.forwardRef<
   React.ComponentPropsWithoutRef<"div"> & { index: number }
 >(({ index, className, ...props }, ref) => {
   const inputOTPContext = React.useContext(OTPInputContext)
-  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
+
+  // @ts-ignore
+  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index] // eslint-disable-line
 
   return (
     <div
